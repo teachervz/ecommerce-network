@@ -755,21 +755,7 @@ const SLIDES = [
     answer:2,
     explain:'رسائل الاحتيال تستهدف أموالنا وبياناتنا… حمايتها وحماية مجتمعنا جزء من الدفاع عن الوطن 💚' },
 
-  /* 19) الدخول للمتجر باستخدام LocalWP */
-  { type:'steps', fx:'slide', strategy:'🧪 خطوة بخطوة', title:'الدخول للمتجر الإلكتروني باستخدام LocalWP',
-    side:'<div class="side-card"><div class="sc-ico">💻</div><b>LocalWP</b><p>أداة لإنشاء بيئة محلية لووردبريس (WordPress) نستورد بها متجرًا افتراضيًا للتدرّب على التسوق.</p><span class="sc-link">www.localwp.com</span></div>',
-    button:'الخطوة التالية ▸',
-    steps:[
-      {icon:'🔍', text:'اكتبي Local في زر البحث، ثم افتحي البرنامج'},
-      {icon:'➕', text:'اضغطي «إنشاء موقع جديد» أو علامة (+)'},
-      {icon:'🗜️', text:'اختاري Select an existing ZIP'},
-      {icon:'📁', text:'حدّدي الملف My giftshop_Final.zip ثم Open'},
-      {icon:'✏️', text:'غيّري اسم المتجر إن أردتِ، ثم Continue'},
-      {icon:'🌐', text:'اضغطي Import Site ثم Open Site لفتح المتجر'}
-    ],
-    final:'متجرك جاهز! 🎉 هيا نجرّب التسوق' },
-
-  /* 20) جربي بنفسك: محاكاة متجر */
+  /* 19) جربي بنفسك: محاكاة متجر */
   { type:'shop', fx:'zoom', strategy:'🛍️ تعلّم بالممارسة', title:'جرّبي التسوق بنفسك!',
     storeName:'My giftshop',
     products:[
@@ -780,7 +766,7 @@ const SLIDES = [
     coupon:{code:'تجارة', discount:0.10},
     tip:'💡 تأكدي دائمًا من المنتجات وعددها قبل الدفع — وجرّبي رمز القسيمة: <b>تجارة</b>' },
 
-  /* 21) تحدي الدقيقة: رتّبي خطوات الشراء */
+  /* 20) تحدي الدقيقة: رتّبي خطوات الشراء */
   { type:'order', fx:'fade', strategy:'⏱️ تحدي الدقيقة', title:'رتّبي خطوات الشراء!', seconds:60,
     prompt:'اضغطي الخطوات بالترتيب الصحيح قبل انتهاء الوقت ⏰',
     steps:[
@@ -802,7 +788,7 @@ const SLIDES = [
     seconds:120,
     endMessage:'انتهى الوقت! ⏰ أحسنتنّ 👏' },
 
-  /* 22) مراجعة: فاتورة الدرس */
+  /* 21) مراجعة: فاتورة الدرس */
   { type:'invoice', fx:'slide', strategy:'🧾 مراجعة', title:'فاتورة درس اليوم',
     prompt:'قبل كشف كل بند: من تتذكر الإجابة؟ 🙋‍♀️',
     storeLine:'متجر الدرس — فاتورة مراجعة', no:'1448',
@@ -818,11 +804,11 @@ const SLIDES = [
     ],
     total:'معرفة لا تُقدَّر بثمن 💜' },
 
-  /* 23) ختام */
+  /* 22) ختام */
   { type:'closing', fx:'zoom',
     title:'تم توصيل الطلب بنجاح!',
     subtitle:'شكرًا لتسوّقكن معنا في متجر المعرفة… أنتنّ رائعات 💜',
-    homework:'ابحثي عن متجر إلكتروني سعودي تحبينه، وحدّدي: ما نموذجه (B2B / B2C / C2C)؟ وما الأنظمة التي لاحظتِ أنه يعتمد عليها؟' }
+    homework:'حلّ الواجب في منصة مدرستي' }
 ];
 
 /* ==================================================================
@@ -1220,7 +1206,7 @@ const R = {
       <h1 class="rv">${s.title}</h1>
       <p class="w-sub rv">${s.subtitle}</p>
       <div class="cl-score rv">🛍️ مشتريات الصف اليوم: <b class="pts">0</b></div>
-      <div class="hw rv"><b>📝 مهمة المتجر:</b> ${s.homework}</div>
+      <div class="hw rv"><b>📝 الواجب:</b> ${s.homework}</div>
       <button class="btn primary big rv" data-act="clap">👏 صفّقن لأنفسكن</button>
     </div>`
 };
