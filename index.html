@@ -260,10 +260,15 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 
 /* ---------- شريحة ورقة العمل ---------- */
 .ws-wrap{display:grid;grid-template-columns:1fr 470px;gap:40px;flex:1;min-height:0;align-items:center}
-.ws-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin:6px 0 22px}
+.ws-head{display:flex;align-items:center;gap:16px}
+.ws-head .lead{flex:1;margin:0}
+.ws-head .btn{white-space:nowrap;text-decoration:none}
+.ws-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:14px 0 18px}
 .ws-list li{display:flex;align-items:center;gap:20px;background:#fff;border:3px solid var(--line);border-radius:24px;padding:16px 24px;box-shadow:var(--shadow)}
 .ws-n{flex:none;width:62px;height:62px;border-radius:18px;background:var(--p);color:#fff;font-size:32px;font-weight:900;display:grid;place-items:center}
 .ws-list li:nth-child(2) .ws-n{background:var(--mint)}
+.ws-list li:nth-child(3) .ws-n{background:var(--amber)}
+.ws-list li:nth-child(4) .ws-n{background:var(--coral)}
 .ws-list b{display:block;font-size:31px;color:var(--pd);font-weight:900}
 .ws-list small{font-size:22px;color:var(--muted);font-weight:700}
 .ws-roles{display:flex;flex-wrap:wrap;gap:12px}
@@ -843,13 +848,16 @@ const SLIDES = [
 
   /* 📝 ورقة العمل الجماعية — مؤقت دقيقتين */
   { type:'worksheet', fx:'zoom', strategy:'🤝 التعلم التعاوني', title:'لنطبّق معًا 📝',
-    intro:'افتحي ورقة العمل مع مجموعتك وأجبن معًا عن التدريبين:',
+    intro:'أجبن مع مجموعتكِ عن الأسئلة الأربعة:',
+    file:'ورقة عمل جماعية - التعاملات عبر الإنترنت.pdf',
     tasks:[
-      {title:'تدريب 1: أكملن الفراغات', desc:'المحفظة الإلكترونية • باي بال • إشارات الثقة • إدارة المخزون • الاتصال الآمن'},
-      {title:'تدريب 2: عدّدن ثلاثًا من تقنيات التجارة الإلكترونية', desc:'مع تعريف مختصر لكل تقنية'}
+      {title:'أكملن الفراغات', desc:'من بنك الكلمات — 5 درجات'},
+      {title:'أي تقنية تعمل في كل موقف؟', desc:'تقنيات التجارة الإلكترونية — 4 درجات'},
+      {title:'المحققات الرقميات 🔎', desc:'متجر موثوق أم احتيال؟ — 4 درجات'},
+      {title:'ثلاث نصائح للأمان', desc:'لصديقة تدفع عبر الإنترنت لأول مرة — 3 درجات'}
     ],
     roles:['👑 القائدة','✍️ الكاتبة','📢 المتحدثة','⏱️ مراقبة الوقت'],
-    seconds:120,
+    seconds:600,
     endMessage:'انتهى الوقت! ⏰ أحسنتنّ 👏' },
 
   /* 23) مراجعة: فاتورة الدرس */
@@ -1267,7 +1275,7 @@ const R = {
   worksheet: s => `${head(s)}
     <div class="ws-wrap">
       <div class="rv">
-        <p class="lead">${s.intro}</p>
+        <div class="ws-head"><p class="lead">${s.intro}</p>${s.file?`<a class="btn primary sm" href="${encodeURI(s.file)}" target="_blank">📄 فتح ورقة العمل</a>`:''}</div>
         <ul class="ws-list">${s.tasks.map((t,k) => `<li><span class="ws-n">${k+1}</span><div><b>${t.title}</b><small>${t.desc}</small></div></li>`).join('')}</ul>
         <div class="ws-roles">${s.roles.map(r => `<span>${r}</span>`).join('')}</div>
       </div>
